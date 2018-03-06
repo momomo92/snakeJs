@@ -12,14 +12,14 @@ let shouldEndGame = false;
 const snakeBodySize = 5;
 const snakeSpeed = 1;
 
-
 let snake =[];
 snake.push ({
     'positionX': (canvasWidth/2) - (snakeBodySize/2),
     'positionY': (canvasHeight/2) - (snakeBodySize/2),
     'direction': directions.right,
 });
-document.addEventListener('keyup', changeSnakeDirection);
+
+document.addEventListener('keydown', changeSnakeDirection);
 
 function changeSnakeDirection(event) {
     const keyCode = event.keyCode;

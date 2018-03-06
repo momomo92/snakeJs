@@ -53,7 +53,7 @@ function moveSnake() {
     if (snakeBody.direction == directions.right) {
         const positionX = snakeBody.positionX + snakeSpeed;
 
-        if (positionX < canvasWidth) {
+        if (positionX + snakeBodySize < canvasWidth) {
             snakeBody.positionX = positionX;
         } else {
             shouldEndGame = true;
@@ -77,7 +77,7 @@ function moveSnake() {
     } else if (snakeBody.direction == directions.bottom) {
         const positionY = snakeBody.positionY + snakeSpeed;
 
-        if (positionY < canvasHeight) {
+        if (positionY + snakeBodySize < canvasHeight) {
             snakeBody.positionY = positionY;
         } else {
             shouldEndGame = true;

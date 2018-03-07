@@ -7,14 +7,14 @@ function changeSnakePosition(snakeBody, bodyNumber) {
     let positionY = snake[bodyNumber].positionY;
 
     if (bodyNumber > 0) {
-        const chaneDirectionPosition = snake[bodyNumber - 1].changeDirectionsPoints[0];
+        const positionOfChangeDirectory = snake[bodyNumber - 1].positionOfChangeDirectory[0];
 
-        if (typeof chaneDirectionPosition !== 'undefined'){
-            if (positionX == chaneDirectionPosition[0] && positionY == chaneDirectionPosition[1]) {
-                const chaneDirectionDestination = chaneDirectionPosition[2];
-                snake[bodyNumber].changeDirectionsPoints.push(chaneDirectionPosition);
+        if (typeof positionOfChangeDirectory !== 'undefined'){
+            if (positionX == positionOfChangeDirectory[0] && positionY == positionOfChangeDirectory[1]) {
+                const chaneDirectionDestination = positionOfChangeDirectory[2];
+                snake[bodyNumber].positionOfChangeDirectory.push(positionOfChangeDirectory);
                 snake[bodyNumber].direction = chaneDirectionDestination;
-                snake[bodyNumber - 1].changeDirectionsPoints.shift();
+                snake[bodyNumber - 1].positionOfChangeDirectory.shift();
             }
         }
 

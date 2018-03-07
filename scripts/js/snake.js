@@ -17,7 +17,7 @@ let snake =[];
 snake.push ({
     'positionX': (canvasWidth/2) - (snakeBodySize/2),
     'positionY': (canvasHeight/2) - (snakeBodySize/2),
-    'changeDirectionsPoints': [],
+    'positionOfChangeDirectory': [],
     'direction': directions.right,
 });
 

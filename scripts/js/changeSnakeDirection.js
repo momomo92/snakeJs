@@ -3,19 +3,18 @@ document.addEventListener('keydown', changeSnakeDirection);
 function changeSnakeDirection(event) {
     const keyCode = event.keyCode;
     const firstSnakeBody = snake[0];
-    let direction;
 
     if (keyCode == 38) {
-        direction = directions.top;
+        firstSnakeBody.direction = directions.top;
+        firstSnakeBody.positionOfChangeDirectory.push([firstSnakeBody.positionX, firstSnakeBody.positionY, directions.top]);
     } else if (keyCode == 39) {
-        direction = directions.right;
+        firstSnakeBody.direction = directions.right;
+        firstSnakeBody.positionOfChangeDirectory.push([firstSnakeBody.positionX, firstSnakeBody.positionY, directions.right]);
     } else if (keyCode == 40) {
-        direction = directions.bottom;
+        firstSnakeBody.direction = directions.bottom;
+        firstSnakeBody.positionOfChangeDirectory.push([firstSnakeBody.positionX, firstSnakeBody.positionY, directions.bottom]);
     } else if (keyCode == 37) {
-        direction = directions.left;
+        firstSnakeBody.direction = directions.left;
+        firstSnakeBody.positionOfChangeDirectory.push([firstSnakeBody.positionX, firstSnakeBody.positionY, directions.left]);
     }
-
-
-    firstSnakeBody.direction = direction;
-    firstSnakeBody.changeDirectionsPoints.push([firstSnakeBody.positionX, firstSnakeBody.positionY, direction]);
 }
